@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Life Organizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Student Life Organizer</h1>
+    <form action="/submit" method="post">
+        <label for="name">Task Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="submit" value="Add Task">
+    </form>
+    {% if name %}
+        <h2>Hello, {{ name }}! Your task has been added.</h2>
+    {% endif %}
+    <a href="/tasks">View Tasks</a>
+</body>
+</html>

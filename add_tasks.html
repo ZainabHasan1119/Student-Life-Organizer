@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Ensure button styling is applied specifically */
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4CAF50; /* Green background */
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Task</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <label for="name">Task Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Add Task</button> <!-- This button will be styled green -->
+    </form>
+    <a href="{{ url_for('tasks') }}">Cancel</a>
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+</html>

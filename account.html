@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .fake-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4CAF50; /* Green background */
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .fake-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Account</h1>
+    <form action="{{ url_for('account') }}" method="post">
+        <label for="name">First & Last Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="submit" value="Enter">
+    </form>
+    {% if name %}
+        <h2>Hello, {{ name }}! Welcome to The Student Life Organizer!.</h2>
+    {% endif %}
+    <a class="fake-button" href="javascript:void(0);">Connect to Google Calendar</a>
+    <a href="/">Go back to Home</a>
+</body>
+</html>
